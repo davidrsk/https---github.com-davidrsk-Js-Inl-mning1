@@ -4,15 +4,15 @@
 3. vid tryck på posten, möjliggörs redigering
 4. vid (-) antal posts, tas senaste post bort
 */
-document.addEventListener("DOMContentLoaded", onPageLoad); //
+document.addEventListener("DOMContentLoaded", onPageLoad); //DOMCL kör koden när html-dokumentet laddats klart
 
 function onPageLoad() { //inkluderar kod som ska köras vid laddning av sidan
     let inputNumber = document.querySelector("#input-number");
 
     inputNumber.addEventListener("input", onInput);
-}
+};
 
-function onInput(){//vad som gänder när man kallar på onInput()
+function onInput(){//vad som händer när man kallar på onInput()
 
     let container = document.getElementById("mitten");//hämtar hela mitten-div och lagrar i "container"
 
@@ -30,7 +30,7 @@ function onInput(){//vad som gänder när man kallar på onInput()
     commodi praesentium eius quod suscipit! 
     Tenetur magnam eligendi amet fugiat adipisci impedit.`;
 
-}
+};
 
 function editText(blogPost){//funktion som tillåter redigering av blogPost
 
@@ -42,13 +42,15 @@ function editText(blogPost){//funktion som tillåter redigering av blogPost
     blogPost.onblur(){
         blogPost.contentEditable = false; //vid klick utanför blogPost = inte möjligt att redigera
     };
-}
+};
 
 function deleteBlogpost(){
-    let blogpost = document.querySelectorAll("article");
+    let blogpost = document.querySelectorAll("article");//väljer alla element av sorten <article>
 
-    
-}
+    for(let i = 0; i < blogpost.length; i++;){
+        blogpost[i].remove();
+    };
+};
 
 
 
