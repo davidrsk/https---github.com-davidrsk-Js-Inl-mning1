@@ -39,7 +39,7 @@ function editText(blogPost){//funktion som tillåter redigering av blogPost
         blogPost.focus();
     };
 
-    blogPost.onblur(){
+    blogPost.onblur = function(){
         blogPost.contentEditable = false; //vid klick utanför blogPost = inte möjligt att redigera
     };
 };
@@ -47,7 +47,7 @@ function editText(blogPost){//funktion som tillåter redigering av blogPost
 function deleteBlogpost(){
     let blogpost = document.querySelectorAll("article");//väljer alla element av sorten <article>
 
-    for(let i = 0; i < blogpost.length; i++;){
+    for(let i = 0; i < blogpost.length; i++){
         blogpost[i].remove();
     };
 };
