@@ -44,6 +44,12 @@ function editText(blogPost){//funktion som tillåter redigering av blogPost
     };
 }
 
+function deleteBlogpost(){
+    let blogpost = document.querySelectorAll("article");
+
+    
+}
+
 
 
 
