@@ -1,4 +1,4 @@
-/*
+/* TODO
 1. 0 bloggposts från start
 2. vid tryck på blogpost-counter, så skapas en post
 3. vid tryck på posten, möjliggörs redigering
@@ -9,27 +9,33 @@ document.addEventListener("DOMContentLoaded", onPageLoad); //DOMCL kör koden n�
 function onPageLoad() { //inkluderar kod som ska köras vid laddning av sidan
     let inputNumber = document.querySelector("#input-number");
 
-    inputNumber.addEventListener("input", onInput);
+    //inputNumber.addEventListener("input", onInput);
+    inputNumber.oninput = function() {
+        deleteBlogpost();
+        onInput(parseInt(inputNumber.value));
+    };
 };
 
-function onInput(){//vad som händer när man kallar på onInput()
+function onInput(numberOfBlogposts){//vad som händer när man kallar på onInput()
 
-    let container = document.getElementById("mitten");//hämtar hela mitten-div och lagrar i "container"
+    for(let i = 0; i < numberOfBlogposts; i++){ //ökar +1 på Titel vid input
 
-    let textbox = document.createElement("article");//skapar en <article> 
-    let title = document.createElement("h3");//skapar en <h3>
-    let text = document.createElement("p");//skapar en <p>
+        let container = document.getElementById("mitten");//hämtar hela mitten-div och lagrar i "container"
 
-    container.append(textbox);//lägger till article inuti mitten
-    textbox.append(title);//lägger till h3 inuti article
-    textbox.append(text);//lägger till p inuti article
+        let textbox = document.createElement("article");//skapar en <article> 
+        let title = document.createElement("h3");//skapar en <h3>
+        let text = document.createElement("p");//skapar en <p>
+    
+        container.append(textbox);//lägger till article inuti mitten
+        textbox.append(title);//lägger till h3 inuti article
+        textbox.append(text);//lägger till p inuti article
+    
+        title.innerText = "Title " + i;
+        text.innerText = `Skriv ett inlägg....`;
 
-    title.innerText = "Title + " 
-    text.innerText = `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-    Inventore harum, quasi dicta ex totam quisquam quo tempore maxime, 
-    commodi praesentium eius quod suscipit! 
-    Tenetur magnam eligendi amet fugiat adipisci impedit.`;
-
+        editText(title);
+        editText(text);
+    };
 };
 
 function editText(blogPost){//funktion som tillåter redigering av blogPost
@@ -47,7 +53,7 @@ function editText(blogPost){//funktion som tillåter redigering av blogPost
 function deleteBlogpost(){
     let blogpost = document.querySelectorAll("article");//väljer alla element av sorten <article>
 
-    for(let i = 0; i < blogpost.length; i++){
+    for(let i = 0; i < blogpost.length; i++){ //om siffran är mindre än antalet blogpost = ta bort blogpost
         blogpost[i].remove();
     };
 };
