@@ -1,42 +1,74 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-html{
-    scroll-behavior: auto;
+html {
+  scroll-behavior: auto;
 }
 
-header{
-    background-color: rgb(255, 207, 145);
-    color: rgb(89, 8, 104);
-    height: 125px;
-    display: flex;
-    flex-direction: row;
-    justify-content:space-evenly;
+header {
+  background-color: rgb(255, 207, 145);
+  color: rgb(75, 6, 87);
+  height: 125px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  position: sticky;
 }
 
-header h1{
-    font-size: 50px;
+header h1 {
+  font-size: 50px;
 }
 
-header p{
-    color: black;
-    font-weight: bolder;
+header p {
+  color: black;
+  font-weight: bolder;
 }
 
-#blogpost-counter{
-    color: black;
-    display: flex;
-    flex-direction: column;
-    justify-items: flex-end;
-    border: solid 2px black;
-    position: sticky;
-
+#blogpost-counter {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-end;
+  border: solid 2px black;
 }
 
-.mitten{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.mitten {
+  padding: 50px;
+  border: style 4px black;
+}
+
+.mitten article {
+  border: solid 2px black;
+  padding: 10px;
+  margin: 30px;
+}
+
+aside {
+  float: right;
+  border: solid 2px black;
+  background-color: rgb(252, 205, 143);
+  padding: 10px;
+  margin: 10px;
+  width: 20%;
+  position: sticky;
+  top: 0;
+}
+
+h2 {
+  color: rgb(89, 8, 104);
+}
+
+li a {
+  text-decoration: none;
+  color: rgb(19, 15, 15);
+}
+
+li a:hover {
+  color: rgb(89, 8, 104);
+}
+
+ul {
+  list-style: none;
 }
